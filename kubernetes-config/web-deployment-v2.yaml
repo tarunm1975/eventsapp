@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: events-web
-  name: events-web
+    app: events-web-v2
+  name: events-web-v2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: events-web
+      app: events-web-v2
       ver: v1.0
   template:
     metadata:
       labels:
-        app: events-web
+        app: events-web-v2
         ver: v1.0
     spec:
       containers:
-        - image: tarunm1975/events-website:v1.0
-          name: events-web
+        - image: tarunm1975/events-website:v2.0
+          name: events-web-v2
           ports:
           - containerPort: 8080
           env:
